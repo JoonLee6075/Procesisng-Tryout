@@ -1,0 +1,109 @@
+public class Interface {
+
+  float x;
+  float y;
+  Interface(float value) {
+
+    x = value;
+  }
+
+  void display() {
+
+    rect(x, 50, 640, 10);
+    rect(x, 550, 640, 10);
+    rect(x, 50, 10, 510);
+    rect(660, 50, 10, 510);
+  }
+
+  void score() {
+    textSize(20);
+    fill(0, 255, 0);
+    text( "your score is: " + int(timer / 100 + 1), 280, 30);
+    text("current stage is: " + counter, 500, 600);
+  }
+
+  void endgame() {
+    background(0);
+    textSize(100);
+    fill(255, 255, 255);
+    text("Game Over", 150, 200);
+    
+    pos.x = 2000;
+    pos.y = 2000;
+  }
+  void wingame(){
+    for (int z = 0; z < enemy.length; z++) {
+        enemy[z].x = 1000;
+        enemy[z].y = 1000;
+    }
+    background(0);
+    textSize(100);
+    fill(255, 255, 255);
+    text("You Win", 200, 200);
+      pos.x = 2000;
+      pos.y = 2000;
+  }
+
+  void drawheart() {
+    if (health == 1) {
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(50, 15);
+      bezierVertex(50, -5, 90, 5, 50, 40);
+      vertex(50, 15);
+      bezierVertex(50, -5, 10, 5, 50, 40);
+      endShape();
+    }
+    if (health == 2) {
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(50, 15);
+      bezierVertex(50, -5, 90, 5, 50, 40);
+      vertex(50, 15);
+      bezierVertex(50, -5, 10, 5, 50, 40);
+      endShape();
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(100, 15);
+      bezierVertex(100, -5, 140, 5, 100, 40);
+      vertex(100, 15);
+      bezierVertex(100, -5, 60, 5, 100, 40);
+      endShape();
+    }
+    if (health == 3) {
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(50, 15);
+      bezierVertex(50, -5, 90, 5, 50, 40);
+      vertex(50, 15);
+      bezierVertex(50, -5, 10, 5, 50, 40);
+      endShape();
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(100, 15);
+      bezierVertex(100, -5, 140, 5, 100, 40);
+      vertex(100, 15);
+      bezierVertex(100, -5, 60, 5, 100, 40);
+      endShape();
+      smooth();
+      noStroke();
+      fill(255, 0, 0);
+      beginShape();
+      vertex(150, 15);
+      bezierVertex(150, -5, 190, 5, 150, 40);
+      vertex(150, 15);
+      bezierVertex(150, -5, 110, 5, 150, 40);
+      endShape();
+    }
+  }
+}
